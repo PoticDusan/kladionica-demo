@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'admin/matches', component: MatchesComponent, canActivate: [AuthGuardService, AdminGuardService] },
   { path: 'admin/users', component: UsersComponent, canActivate: [AuthGuardService, AdminGuardService] },
   { path: '**', redirectTo: '' }
-  
+
 ];
 
 @NgModule({
