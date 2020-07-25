@@ -1,0 +1,34 @@
+<div class="form-group" style="text-align: center;">
+    <h6 style="text-align: center;">
+        <h1 style="color: orange; padding-bottom: 10px;">Dobrodošli<br></h1>Unesite Vaše podatke za registraciju.
+    </h6>
+
+    <div class="form-group" style="padding: 0px;">
+        <label for="exampleInputEmail1"></label>
+        <input type="email" class="form-control" [(ngModel)]="user.email" placeholder="Email adresa" required>
+    </div>
+   
+
+    <div class="form-group" style="padding-top: 0px;">
+        <label for="exampleInputName1"></label>
+        <input type="text" class="form-control" [(ngModel)]="user.name" placeholder="Ime i prezime" required>
+    </div>
+
+    <div class="form-group" style="padding-top: 0px;">
+        <label for="exampleInputPassword1"></label>
+        <input type="password" class="form-control" [(ngModel)]="password" placeholder="Šifra" required>
+    </div>
+
+    <div class="form-group" style="padding-top: 0px;">
+        <label for="exampleInputPassword2"></label>
+        <input type="password" class="form-control" placeholder="Ponoviti šifru" required>
+    </div>
+
+    <div style="padding-top: 22px; text-align: center;">
+        <button (click)="register()" class="btn btn-primary" type="submit">Registruj se</button>
+    </div>
+
+    <div style="padding-top: 2px; font-size: 12px; text-align: center; padding-top: 20px;">
+        Ukoliko već posedujete nalog, <br>prijavite se <a routerLink="/login"> <u>ovde.</u></a>
+    </div>
+</div>

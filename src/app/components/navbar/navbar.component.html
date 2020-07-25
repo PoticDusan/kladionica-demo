@@ -1,0 +1,108 @@
+<header>
+  <div class="nav-top">
+    <nav class="navbar navbar-collapse navbar-expand-md navbar-dark bg-none fixed-top" style="position: absolute;">
+      <div class="leftside">
+        <a class="navbar-brand" routerLink="/"><b>KLADIONICA</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+          aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div>
+        <div class="centerside">
+          <div class="nav-center" style="margin: 0 auto; text-align: center;">
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" routerLink="/betting">Klađenje</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/">Uživo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/">Kazino igre</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/">Igre na brojeve</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/">Lucky Super 6</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/">Virtuali</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="rightside"
+          style="font-size: 15px; position: relative !important;  text-align: right; overflow: visible;">
+          <div class="row container" style="padding: 0; margin: 0;" *ngIf="appUser; else anonymousUser">
+
+            <div class="col"
+              style=" padding: 0; margin: 0; text-align: center; border: 1px dotted gray; border-radius: 5px; background: transparent; color: rgb(250, 165, 7);">
+              <div style="padding: 2px;">{{appUser.cash}} (RSD)</div>
+            </div>
+            <!-- dropdown user -->
+            <div class="col" ngbDropdown style="padding: 0; margin: 0;">
+              <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false" style="font-size: 15px; width: 100px;">
+                {{appUser.name}}
+              </a>
+              <div ngbDropdownMenu right={true} class="dropdown-menu show" aria-labelledby="dropdown01"
+                style="position: fixed !important; float: right;">
+                <a class="dropdown-item" routerLink="/tickets">Tiketi</a>
+                <ng-container *ngIf="appUser.isAdmin">
+                  <a class="dropdown-item" routerLink="/admin/users">Korisnici</a>
+                  <a class="dropdown-item" routerLink="/admin/matches">Mečevi</a>
+                </ng-container>
+                <a (click)="logout()" class="dropdown-item btn-logout">Odjavi se</a>
+              </div>
+            </div>
+            <!-- dropdown user -->
+          </div>
+
+          <!-- nav-login -->
+          <ng-template #anonymousUser>
+            <div id="user-login-form" style="margin: 0 auto;">
+              <div class="login-container form-inline">
+                <form class="form-inline" autocomplete="off">
+                  <div class="col container" style="padding: 0; margin: 0;">
+                    <div class="row container" style="padding: 0; margin: 0;">
+                      <div class="col container" style="padding: 0; margin: 0;">
+                        <input style="width: 100px; height: 24px;" type="text" placeholder="Email adresa" name="email"
+                          [(ngModel)]="email">
+                      </div>
+                      <div class="col container" style="padding: 0; margin: 0;">
+                        <input style="width: 100px; height: 24px;" type="password" placeholder="Šifra" name="password"
+                          [(ngModel)]="password">
+                      </div>
+                      <div class="col container" style="padding: 0; margin: 0; padding-left: 2px; font-size: 12px;">
+                        <button (click)="login()" class="btn btn-primary btn-sm" type="submit"><span>OK</span></button>
+                      </div>
+                    </div>
+                    <div class="row container" style="padding: 0; margin: 0;">
+                      <div style="padding-top: 2px; font-size: 9px;">
+                        <a routerLink="/registration">Registruj se</a>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </ng-template>
+          <!-- nav-login -->
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div>
+    <app-sub-navbar clas="sub-navbar"></app-sub-navbar>
+  </div>
+
+</header>

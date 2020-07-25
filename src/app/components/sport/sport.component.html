@@ -1,0 +1,95 @@
+<!-- info-header  -->
+<div class="grid" style="position: relative;">
+    <div class="row info-header">
+
+        <div class="column-border">
+            <div class="banner">
+                <p style="  vertical-align: middle;
+               font-size: 18px;">Fudbal</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="odd-class">
+                <div class="row">
+                    <div class="col" style="text-align: center !important ; vertical-align: middle !important;">
+                      <p>Konačan ishod</p></div>
+                </div>
+            </div>
+            <div class="row odds">
+                <div class="column-odd-info">
+                   1
+                </div>
+                <div class="column-odd-info">
+                   X
+                </div>
+                <div class="column-odd-info">
+                   2
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="odd-class">
+                <div class="row">
+                    <div class="col" style="text-align: center !important ; vertical-align: middle !important;">
+                      <p>Dupla šansa</p></div>
+                </div>
+            </div>
+            <div class="row odds">
+                <div class="column-odd-info">
+                   1X
+                </div>
+                <div class="column-odd-info">
+                   12
+                </div>
+                <div class="column-odd-info">
+                   X2
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="odd-class">
+                <div class="row">
+                    <div class="col" style="text-align: center !important ; vertical-align: middle !important;">
+                      <p>Ukupno golova</p></div>
+                </div>
+            </div>
+            <div class="row odds">
+                <div class="column-odd-info">
+                   0-2
+                </div>
+                <div class="column-odd-info">
+                   3+
+                </div>
+                <div class="column-odd-info">
+                   4+
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="odd-class">
+                <div class="row">
+                    <div class="col" style="text-align: center !important ; vertical-align: middle !important;">
+                      <p>Oba tima daju gol</p></div>
+                </div>
+            </div>
+            <div class="row odds">
+                <div class="column-odd-info">
+                   gg
+                </div>
+                <div class="column-odd-info">
+                   ng
+                </div>
+                <div class="column-odd-info">
+                   gg3+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- info-header  -->
+    <div *ngFor="let s of sports">
+        <app-competition [sport]="s"></app-competition>
+    </div>
+</div>

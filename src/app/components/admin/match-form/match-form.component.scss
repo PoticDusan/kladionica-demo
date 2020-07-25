@@ -1,0 +1,67 @@
+.leftside {
+    width         : 70%;
+    vertical-align: middle;
+}
+
+.leftside input select {
+    text-align: center;
+}
+
+table {
+    height         : 650px;
+    padding-top    : 70px;
+    border-collapse: collapse;
+    text-align     : center;
+    background     : #132953;
+    border-radius  : 10px;
+    color          : whitesmoke;
+}
+
+table td {
+    vertical-align: middle;
+    outline: none;
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+    color           : white;
+    background-color: #2e4061;
+}
+
+table input {
+    vertical-align: middle;
+    color         : black;
+    height        : 28px;
+    outline       : none;
+    border-radius : 7px;
+    border        : 1px;
+    font-family   : 'proxima-nova', sans-serif;
+    font-size     : 14px;
+    text-align    : center;
+    width         : 82px;
+}
+
+.leftside input,
+select,
+textarea,
+input.option,
+select.option {
+    vertical-align: middle;
+    color         : rgba(245, 245, 245, 0.87);
+    height        : 36px;
+    background    : #132953 !important;
+    border        : none;
+    font-family   : 'proxima-nova', sans-serif;
+    font-size     : 15px;
+    text-align    : center;
+}
+
+.form-group {
+    font-family: 'proxima-nova', sans-serif;
+}
+
+.form-control, option{
+    color: rgba(245, 245, 245, 0.87);
+    font-family: 'proxima-nova', sans-serif;
+
+}

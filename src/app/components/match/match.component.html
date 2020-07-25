@@ -1,0 +1,115 @@
+<!-- <button (click)="getFilteredMatches()" >GET</button> -->
+<div class="grid" style="position: relative;">
+    <div class="match-grid" *ngFor="let match of completeMatches">
+        <div class="row match-item">
+            <div class="column-match-info-id">
+                <div class="column-info-match-odd">
+                    <div style=" color: #40a3ff;">
+                       {{match.matchID}}
+
+                    </div>
+                </div>
+            </div>
+            <div class="column-match-info">
+                <div class="column-info-match-date">
+                    <span style="padding-left: 10px; color: rgb(250, 165, 7);">{{match.date}}</span> <br>
+                    <span style="padding-left: 10px; color: rgb(250, 165, 7);">{{match.time}}</span>
+                </div>
+            </div>
+            <div class="column-match-info">
+                <div class="column-info-match-time">
+                    <span style="padding-left    : 10px;">{{match.team1}}</span> <br>
+                    <span style="padding-left    : 10px;">{{match.team2}}</span>
+                </div>
+            </div>
+            <div class="column-match flex-fill">
+                <div class="row" style="flex:1;">
+                    <div class="column-info-match-odd">
+                        <!-- za tip 1-->
+                        <div><button (click)="selectOdd(match, match.arrayOdds[1])" class="odd-btn"
+                                style="width:100%; height: 50px !important;">
+                                <b> {{match.arrayOdds[1].tip1}}</b></button></div>
+                    </div>
+                    <div class="column-info-match-odd">
+                        <!-- za tip x-->
+                        <div><button (click)="selectOdd(match, match.arrayOdds[10])" class="odd-btn"
+                                style="width:100%; height: 50px !important;">
+                                <b>{{match.arrayOdds[10].tipx}}</b></button></div>
+                    </div>
+                    <div class="column-info-match-odd">
+                        <!-- za tip 2-->
+                        <div><button (click)="selectOdd(match, match.arrayOdds[4])" class="odd-btn"
+                                style="width:100%; height: 50px !important;">
+                                <b>{{match.arrayOdds[4].tip2}}</b></button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column-match">
+                <div class="row">
+                    <div class="column-info-match-odd">
+                        <!-- za tip 1x-->
+                        <div><button (click)="selectOdd(match, match.arrayOdds[3])" class="odd-btn"
+                                style="width:100%; height: 50px !important;">
+                                <b>{{match.arrayOdds[3].tip1x}}</b></button></div>
+                    </div>
+                    <div class="column-info-match-odd">
+                        <!-- za tip 12-->
+                        <div><button (click)="selectOdd(match, match.arrayOdds[2])" class="odd-btn"
+                                style="width:100%; height: 50px !important;">
+                                <b>{{match.arrayOdds[2].tip12}}</b></button></div>
+                    </div>
+                    <div class="column-info-match-odd">
+                        <!-- za tip x2-->
+                        <div><button (click)="selectOdd(match, match.arrayOdds[11])" class="odd-btn"
+                                style="width:100%; height: 50px !important;">
+                                <b>{{match.arrayOdds[11].tipx2}}</b></button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column-match">
+                <div class="row">
+                    <div class="column-info-match-odd">
+                        <!-- za tip 0-2-->
+                        <div><button (click)="selectOdd(match, match.arrayOdds[0])" class="odd-btn"
+                                style="width:100%; height: 50px !important;">
+                                <b>{{match.arrayOdds[0].tip02}}</b></button></div>
+                    </div>
+                    <div class="column-info-match-odd">
+                        <!-- za tip 3+-->
+                        <div><button (click)="selectOdd(match, match.arrayOdds[5])" class="odd-btn"
+                                style="width:100%; height: 50px !important;">
+                                <b>{{match.arrayOdds[5].tip3plus}}</b></button></div>
+                    </div>
+                    <div class="column-info-match-odd">
+                        <!-- za tip 4+-->
+                        <div><button (click)="selectOdd(match, match.arrayOdds[6])" class="odd-btn"
+                                style="width:100%; height: 50px !important;">
+                                <b>{{match.arrayOdds[6].tip4plus}}</b></button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column-match">
+                <div class="row">
+                    <div class="column-info-match-odd">
+                        <!-- za tip gg-->
+                        <div><button (click)="selectOdd(match, match.arrayOdds[7])" class="odd-btn"
+                                style="width:100%; height: 50px !important;">
+                                <b>{{match.arrayOdds[7].tipgg}}</b></button></div>
+                    </div>
+                    <div class="column-info-match-odd">
+                        <!-- za tip ng-->
+                        <div><button (click)="selectOdd(match, match.arrayOdds[9])" class="odd-btn"
+                                style="width:100%; height: 50px !important;">
+                                <b>{{match.arrayOdds[9].tipng}}</b></button></div>
+                    </div>
+                    <div class="column-info-match-odd">
+                        <!-- za tip gg3+-->
+                        <div><button (click)="selectOdd(match, match.arrayOdds[8])" class="odd-btn"
+                                style="width:100%; height: 50px !important;">
+                                <b>{{match.arrayOdds[8].tipgg3plus}}</b></button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

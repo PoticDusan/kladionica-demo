@@ -1,0 +1,32 @@
+<div class="container">
+    <div style="padding: 10px; text-align: center; font-size: 20px; color: rgb(250, 165, 7);"> Mečevi</div>
+
+    <p> <a routerLink="/admin/matches/new" class="btn btn-primary"> Dodaj novi meč </a> </p>
+    <p>
+        <!-- (keyup)="filter(query.value)" -->
+        <input #query  type="text" class="form-control" placeholder="Pretraži...">
+    </p>
+ 
+    <table class="table" style="color: white">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Tim 1</th>
+                <th>Tim 2</th>
+                <th>Datum</th>
+                <th>Vreme</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let m of matches$ | async">
+                <td>{{m.matchID}}</td>
+                <td>{{m.team1}}</td>
+                <td>{{m.team2}}</td>
+                <td>{{m.date}}</td>
+                <td>{{m.time}}</td>
+                <td><a [routerLink]="['/admin/matches/', m.key]">Izmeni</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

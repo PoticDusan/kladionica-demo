@@ -1,0 +1,105 @@
+.grid {
+    display                 : contents; //flex ili unset
+    position                : relative;
+    // grid-template-columns: repeat(5, 1fr);
+    grid-template-rows      : auto 1fr;
+    /* NEW */
+
+    border-right: 1px solid #0e3147;
+    border-top  : 1px solid #0e3147;
+    width       : 100%;
+    font-family : 'proxima-nova', sans-serif;
+}
+
+
+.grid .match-grid:nth-child(even) {
+    background: rgba($color: #203c4d, $alpha: 0.6);
+}
+
+.grid .span {
+    // padding      : 8px 4px;
+    border-left     : 1px solid #0e3147;
+    border-right    : 1px solid #0e3147;
+}
+
+.info-header {
+    width: 100%;
+}
+
+.grid .row {
+    margin-right: auto;
+    margin-left : auto;
+}
+
+.column-border {
+    width     : 33.33%;
+    border    : 1px solid #0e3147;
+    text-align: center;
+}
+
+.column-match-info {
+    width     : 15.418%;
+    text-align: left;
+    border    : 1px solid #0e3147;
+
+}
+
+.column-match-info-id {
+    border: 1px solid #0e3147;
+    width : 2.5%;
+}
+
+
+.column {
+    width     : 16.666%;
+    // padding: 2px;
+    border    : 1px solid #0e3147;
+    text-align: center;
+}
+
+.odds {
+    position: relative;
+}
+
+.column-odd-info {
+    width : 33.33%;
+    border: 1px solid #0e3147; // padding: 2px;
+}
+
+.match-item {
+    position: relative;
+}
+
+.column-match {
+    width     : 16.666%;
+    border    : 1px solid #0e3147;
+    text-align: center;
+}
+
+.odd-btn {
+    background: none;
+    border    : none;
+    outline   : none;
+    color     : white
+}
+
+.odd-btn:hover {
+    background-color: #0e3147;
+}
+
+.odd-btn:active {
+    background-color: #fdb913;
+}
+
+.column-info-match-odd {
+    width         : 33.33%;
+    height        : 100%;
+    text-align    : center;
+    vertical-align: middle;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear  : both;
+}

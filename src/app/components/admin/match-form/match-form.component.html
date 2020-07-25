@@ -1,0 +1,149 @@
+<div class="container">
+    <div style="padding: 10px; text-align: center; font-size: 20px; color: rgb(250, 165, 7);"> Novi meč</div>
+
+    <form [formGroup]="matchForm" (ngSubmit)="saveMatch()" autocomplete="off">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="leftside">
+                    <div class="form-group" style="color:orange">
+                        <label for="sports" style="color:orange">Sport</label>
+                        <select [(ngModel)]="newMatch.sport" formControlName="sport_id" name="sport_id"
+                            class="form-control" required>
+                            <option value="" disabled selected hidden>- Izaberite -</option>
+                            <option *ngFor='let sport of sportList' [ngValue]="sport.name">
+                                {{ sport.name }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="color:orange">
+                        <label for="competitions">Takmičenje</label>
+                        <select [(ngModel)]="newMatch.competition" class="form-control" name="competition_id"
+                            formControlName="competition_id">
+                            <option value="" disabled selected hidden>- Izaberite -</option>
+                            <option *ngFor='let competition of competitionList' [ngValue]="competition.name">
+                                {{ competition.name }}</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group" style="color:orange">
+                        <label for="tim1">Prvi tim</label>
+                        <input [(ngModel)]="newMatch.team1" name="team1" formControlName="team1" id="tim1" type="text"
+                            class="form-control">
+                    </div>
+                    <div class="form-group" style="color:orange">
+                        <label for="tim2">Drugi tim</label>
+                        <input [(ngModel)]="newMatch.team2" name="team2" formControlName="team2" id="tim2" type="text"
+                            class="form-control">
+                    </div>
+                    <div class="form-group" style="color:orange">
+                        <label for="date">Datum početka</label>
+                        <input [(ngModel)]="newMatch.date" name="date" formControlName="date" id="date" type="text"
+                            class="form-control">
+                    </div>
+                    <div class="form-group" style="color:orange">
+                        <label for="time">Vreme početka</label>
+                        <input [(ngModel)]="newMatch.time" name="time" formControlName="time" id="time" type="text"
+                            class="form-control">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="rightside table-responsive-sm" style="overflow-y: auto; overflow-x: hidden; height: 430px;">
+                    <table class="table table-sm table-striped table-border table-hover scroll-menu">
+                        <thead>
+                            <tr>
+                                <th style="color:orange">Tip:</th>
+                                <th style="color:orange">Opis:</th>
+                                <th style="color:orange">Kvota:</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Prvi tim pobeđuje na meču</td>
+                                <td><input [(ngModel)]="newOdds.tip1" name="tip1" formControlName="tip1" id="tip1"
+                                        type="number" placeholder="decimal"></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Drugi tim pobeđuje na meču</td>
+                                <td><input [(ngModel)]="newOdds.tip2" name="tip2" formControlName="tip2" id="tip2"
+                                        type="number" placeholder="decimal"></td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>---------------------------</td>
+                                <td><input [(ngModel)]="newOdds.tip12" name="tip12" formControlName="tip12" id="tip12"
+                                        type="number" placeholder="decimal"></td>
+                            </tr>
+                            <tr>
+                                <td>0-2</td>
+                                <td>---------------------------</td>
+                                <td><input [(ngModel)]="newOdds.tip02" name="tip02" formControlName="tip02" id="tip02"
+                                        type="number" placeholder="decimal"></td>
+                            </tr>
+                            <tr>
+                                <td>1X</td>
+                                <td>---------------------------</td>
+                                <td><input [(ngModel)]="newOdds.tip1x" name="tip1x" formControlName="tip1x" id="tip1x"
+                                        type="number" placeholder="decimal"></td>
+                            </tr>
+                            <tr>
+                                <td>3+</td>
+                                <td>---------------------------</td>
+                                <td><input [(ngModel)]="newOdds.tip3plus" name="tip3plus" formControlName="tip3plus"
+                                        id="tip3plus" type="number" placeholder="decimal"></td>
+                            </tr>
+                            <tr>
+                                <td>4+</td>
+                                <td>---------------------------</td>
+                                <td><input [(ngModel)]="newOdds.tip4plus" name="tip4plus" formControlName="tip4plus"
+                                        id="tip4plus" type="number" placeholder="decimal"></td>
+                            </tr>
+                            <tr>
+                                <td>GG</td>
+                                <td>---------------------------</td>
+                                <td><input [(ngModel)]="newOdds.tipgg" name="tipgg" formControlName="tipgg" id="tipgg"
+                                        type="number" placeholder="decimal"></td>
+                            </tr>
+                            <tr>
+                                <td>GG3+</td>
+                                <td>---------------------------</td>
+                                <td><input [(ngModel)]="newOdds.tipgg3plus" name="tipgg3plus"
+                                        formControlName="tipgg3plus" id="tipgg3plus" type="number"
+                                        placeholder="decimal"></td>
+                            </tr>
+                            <tr>
+                                <td>NG</td>
+                                <td>---------------------------</td>
+                                <td><input [(ngModel)]="newOdds.tipng" name="tipng" formControlName="tipng" id="tipng"
+                                        type="number" placeholder="decimal"></td>
+                            </tr>
+                            <tr>
+                                <td>X</td>
+                                <td>Prvi tim pobeđuje na meču</td>
+                                <td><input [(ngModel)]="newOdds.tipx" name="tipx" formControlName="tipx" id="tipx"
+                                        type="number" placeholder="decimal"></td>
+                            </tr>
+                            <tr>
+                                <td>X2</td>
+                                <td>---------------------------</td>
+                                <td><input [(ngModel)]="newOdds.tipx2" name="tipx2" formControlName="tipx2" id="tipx2"
+                                        type="number" placeholder="decimal"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col" style="margin: 0 auto; padding: 15px; text-align: right;">
+                    <button class="btn btn-primary btn-space" type="submit" [disabled]="!matchForm.valid"
+                        style="width: 71px;">Save</button>
+                    <button *ngIf="showBtn" class="btn btn-danger" type="button" (click)="delete()"
+                        style="width: 71px;">Delete</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

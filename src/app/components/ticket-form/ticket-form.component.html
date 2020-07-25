@@ -1,0 +1,95 @@
+<div class="grid">
+    <div class="col" style="border: 1px solid #0e3147;">
+        <div class="row container"
+            style="margin: 0; text-align: center; vertical-align: middle; background-color: #1e2128; padding-top: 10px; padding-left: 4px; padding-right: 4px;">
+            <div class="col" style="margin: 0;">
+                <span style="width: 60%; text-align: left; color: #40a3ff; font-size: 15px;">Klađenje tiket</span>
+            </div>
+            <div class="col" style="margin: 0; text-align: right; padding: 3px; height: 100%;">
+                <button class="btn btn-primary btn-sm" (click)="deleteAll()">Obriši</button>
+            </div>
+        </div>
+        <div class="scrollbar " style="overflow-y: auto;  max-height: 550px;">
+            <div style=" text-align: center; background-color: #2a2d35; padding-left: 4px; padding-right: 4px;">
+                <div *ngFor="let m of ticketMatches">
+                    <div class="match" style="padding-left: 4px; padding-right: 4px;  border-bottom: 1px solid gray;">
+                        <div style="margin: 0; padding-top: 15px; ">
+                            <div class="row container"
+                                style="margin: 0; border-radius: 10px; border-color: transparent; background-color: #2a2d35">
+                                <div class="col" style="width: 80%; text-align: right; margin: 0;">
+                                    <div class="row" style="font-size: 15px; padding-left: 6px;">
+                                        <b>{{m.team1}} - {{m.team2}}</b>
+                                    </div>
+                                    <div class="row"
+                                        style="font-size: 13px; color: rgb(250, 165, 7); padding-left: 6px;">
+                                        {{m.date}}
+                                    </div>
+                                    <div class="row"
+                                        style="font-size: 13px; color: rgb(250, 165, 7); padding-left: 6px;">
+                                        {{m.time}}h
+                                    </div>
+                                </div>
+                                <div class="col" style="width: 20%;">
+                                    <div style="text-align: right; height: 70%;">
+                                        <button (click)="deleteMatch(m)"
+                                            style="background-color: transparent; color: gray; border: none; padding-right: 6px;">
+                                            X
+                                        </button>
+                                    </div>
+                                    <div
+                                        style="text-align: right; height: 30%; font-size: 13px; color: rgb(250, 165, 7); padding-right: 6px;">
+                                        <b>{{m.oddValue}}</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uplata grid">
+                    <div class="row container" style="margin: 0; padding-top: 10px;">
+                        <div class="col">
+                            <div class="row" style="padding-left: 4px; padding-right: 4px;">
+                                <div class="col" style=" text-align: left;">
+
+                                    <label for="uplata">Uplata (RSD):</label>
+                                </div>
+                                <div class="col" style="text-align: right;">
+
+                                    <input [(ngModel)]="price" id="uplata" style="width: 100px; text-align: right;">
+                                </div>
+                            </div>
+
+
+                            <div class="row" style="padding-left: 4px; padding-right: 4px;">
+                                <div class="col" style="text-align: left;">
+                                    <label for="kvota" style="text-align: left;">Ukupna kvota:</label>
+                                </div>
+                                <div class="col" style="text-align: right;">
+                                    <span id="kvota"
+                                        style="text-align: right; vertical-align: middle; color: rgb(250, 165, 7);"><b>{{totalOdd}}</b></span>
+                                </div>
+                            </div>
+
+                            <div class="row" style="padding-left: 4px; padding-right: 4px;">
+                                <div class="col" style="text-align: left;">
+                                    <label for="isplata" style="text-align: left;">Moguća isplata:</label>
+                                </div>
+                                <div class="col" style="text-align: right;">
+                                    <span id="isplata"
+                                        style="text-align: right; vertical-align: middle;"><b>1.00</b></span>
+                                </div>
+                            </div>
+
+                            <div class="row" style="padding-left: 4px; padding-right: 4px;">
+                                <div class="col" style="text-align: center;">
+                                    <button class="btn btn-primary" (click)="createTicket()">Uplati tiket</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

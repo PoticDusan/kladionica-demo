@@ -1,0 +1,108 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+//fonts
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+
+
+*{
+    box-sizing: border-box;
+    margin    : 0;
+    padding   : 0;
+}
+
+.navbar {
+    background     : #0e1d42;
+    display        : flex;
+    justify-content: space-between;
+    vertical-align : middle;
+    position       : relative;
+}
+
+body {
+    padding-top: 60px;
+    background : #0f1315;
+    color      : whitesmoke;
+    overflow-x: hidden;
+}
+
+
+.navbar .nav-center {
+    font-size: 20px;
+}
+
+.navbar .form-inline {
+    display    : flex;
+    flex-flow  : row wrap;
+    align-items: center;
+    margin-left: auto;
+}
+
+.navbar .form-inline input {
+    vertical-align: middle;
+    color         : white;
+    height        : 26px;
+    background    : #132953;
+    outline       : none;
+    border        : 1px;
+    font-family   : 'proxima-nova', sans-serif;
+    font-size     : 12px;
+    padding-left  : 10px;
+    margin        : 0 2px;
+}
+
+.navbar .form-inline input::-webkit-input-placeholder {
+    color: #2a6aae;
+}
+
+.navbar .form-inline button {
+    height        : 24px;
+    outline       : none;
+    border        : 1px;
+    border-radius : 0px;
+    font-family   : 'proxima-nova', sans-serif;
+    font-size     : 12px;
+    margin        : 0;
+    vertical-align: middle;
+}
+
+.navbar .form-inline button:hover {
+    background-color: royalblue;
+}
+
+
+.navbar .dropdown-menu {
+    background-color: #0e1d42;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+    color: whitesmoke;
+}
+
+.navbar .dropdown-menu a:hover {
+    background-color: royalblue;
+}
+
+.navbar .dropdown-menu .btn-logout:hover {
+    background-color: darkred;
+    color           : whitesmoke;
+}
+
+.btn-space {
+    margin-right: 7px;
+}
+
+@media (max-width: 800px) {
+    .navbar .form-inline input {
+        margin: 10px 0;
+    }
+
+    .navbar .form-inline button {
+        margin: 10px 0;
+    }
+
+    .navbar .form-inline {
+        flex-direction: column;
+        align-items   : stretch;
+    }
+}

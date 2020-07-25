@@ -1,0 +1,6 @@
+<div *ngFor="let comp of competitions">
+    <div class="competition-info">
+        {{comp.competitionName}}
+    </div>
+    <app-match [sport]="sport" [competition]="comp"></app-match>
+</div>

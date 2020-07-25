@@ -1,0 +1,40 @@
+.grid {
+    display                    : contents; //flex ili unset
+    position                   : relative;
+    // grid-template-columns   : repeat(5, 1fr);
+    // grid-template-rows      : auto 1fr;
+    /* NEW */
+    border-right: 1px solid #0e3147;
+    border-top  : 1px solid #0e3147;
+    font-family : 'proxima-nova', sans-serif;
+}
+
+.col {
+    padding: 0;
+    margin : 0;
+}
+
+.row {
+    padding: 0;
+    margin : 0;
+}
+
+.scrollDiv {
+    height    : auto;
+    max-height: 150%;
+    overflow  : auto;
+}
+
+.scrollbar {
+    background: transparent;
+    overflow-y: scroll;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width           : 6px;
+    background-color: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: #0e3147;
+}

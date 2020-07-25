@@ -1,0 +1,80 @@
+<div class="container">
+    <div style="padding: 10px; text-align: center; font-size: 20px; color: rgb(250, 165, 7);"> Tiketi</div>
+    <div class="row">
+        <div class="col" style="background: #1e2128; margin: 0;">
+            <div class="scrollbar "  style="overflow-y: auto;  max-height: 550px;">
+                <div class="ticket-list"  *ngFor="let t of tickets">
+                    <div class="ticket"  style="padding: 10px;">
+                        <div class="row ticket-card container" style="background: #2a2d35; padding: 0; margin: 0;">
+                            <div class="col" >
+                                <div class="row container" style="height: 70%;" >
+                                    <!-- id  -->
+                                    <div>
+                                        <p>
+                                            ID: <b style="padding-right: 2px; color: rgb(250, 165, 7);">
+                                                {{t.ticketNumber}} </b>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row container" style="height: 15%;">
+                                    <!-- date -->
+
+                                    <p>Datum: </p>
+                                    <p style="padding-left: 2px; color: rgb(250, 165, 7);">
+                                        {{t.ticketDate}}
+
+                                    </p>
+
+                                </div>
+                                <div class="row container" style="height: 15%;">
+                                    <!-- time -->
+                                    <p>Vreme: </p>
+                                    <p style="padding-left: 2px; color: rgb(250, 165, 7);">
+                                        {{t.ticketTime}}
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col">
+
+                                <div class="row container" style="visibility: hidden; ">
+                                    <!-- Uplata -->
+                                    <div style="text-align: right; ">
+                                        Uplata:
+                                        <p style="padding-left: 2px; color: rgb(250, 165, 7);">
+                                            <b> {{t.ticketPrice}} </b>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row container" style="visibility: hidden; ">
+                                    <!-- Uplata -->
+                                    <div style="text-align: right; ">
+                                        Uplata:
+                                        <p style="padding-left: 2px; color: rgb(250, 165, 7);">
+                                            <b> {{t.ticketPrice}} </b>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="row container" style="display: block;">
+                                    <!-- Uplata -->
+                                    <div style="text-align: right; ">
+                                        <p>
+                                            Uplata: <b style="padding-right: 2px;">
+                                                {{t.ticketPrice}} </b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+
+        </div>
+    </div>
+</div>
